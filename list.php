@@ -27,8 +27,9 @@ ini_set('display_startup_errors', 1); ?>
     <thead>
     <tr>
         <th scope="col">#id</th>
-        <th scope="col">Size</th>
+        <th scope="col">size</th>
         <th scope="col">quantity</th>
+        <th scope="col">delete</th>
 
     </tr>
     </thead>

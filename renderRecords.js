@@ -5,21 +5,28 @@ const parent = document.getElementById('tableBody');
 
 
 function addChild (id, size, quantity){
-    let container =  document.createElement('tr');
-    let itemOne = document.createElement('th');
-    let itemTwo = document.createElement('th');
-    let itemThree = document.createElement('th');
-    itemOne.textContent = id;
-    itemTwo.textContent = size;
-    itemThree.textContent = quantity;
+    const container =  document.createElement('tr');
+    const node1 = document.createElement('th');
+    const node2 = document.createElement('th');
+    const node3 = document.createElement('th');
+    const node4 = document.createElement('th');
+    const button = document.createElement('button');
 
-    itemOne.scope = 'col';
+    node1.textContent = id;
+    node2.textContent = size;
+    node3.textContent = quantity;
 
-
+    node1.scope = 'col';
+    button.textContent = 'Delete record';
+    button.className = 'btn btn-danger';
+    button.data = id;
  parent.appendChild(container);
- container.appendChild(itemOne);
- container.appendChild(itemTwo);
- container.appendChild(itemThree);
+ container.appendChild(node1);
+ container.appendChild(node2);
+ container.appendChild(node3);
+
+ container.appendChild(node4);
+ node4.appendChild(button);
 };
 
 if (list){
@@ -30,4 +37,13 @@ if (list){
     });
 
 }
+
+
+const buttonNode = document.querySelectorAll('.btn.btn-danger');
+buttonNode.forEach(button=>{
+    button.addEventListener('click', (e) =>{
+        console.log(e.target.data);
+    })
+})
+
 
