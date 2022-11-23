@@ -56,4 +56,9 @@ function insertSupply ($connection, $query ){
 
 };
 
-insertSupply($con, $query);
+//insertSupply($con, $query);
+
+if (isset($_POST)){
+    header('Content-type: text/javascript');
+    echo json_encode($_POST, JSON_PRETTY_PRINT);
+}
