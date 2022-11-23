@@ -1,10 +1,9 @@
 let list = JSON.parse(localStorage.getItem('collection'));
 console.log(list);
-
 const parent = document.getElementById('tableBody');
 
 
-function addChild (id, size, quantity){
+function addChild (id, size, quantity, uid){
     const container =  document.createElement('tr');
     const node1 = document.createElement('th');
     const node2 = document.createElement('th');
@@ -19,7 +18,7 @@ function addChild (id, size, quantity){
     node1.scope = 'col';
     button.textContent = 'Delete record';
     button.className = 'btn btn-danger';
-    button.data = id;
+    button.value = uid;
  parent.appendChild(container);
  container.appendChild(node1);
  container.appendChild(node2);
@@ -31,19 +30,27 @@ function addChild (id, size, quantity){
 
 if (list){
     list.forEach((item)=>{
-
-        addChild(item.id, item.size, item.quantity);
-
+        addChild(item.id, item.size, item.quantity, item.uid);
     });
 
 }
 
-
 const buttonNode = document.querySelectorAll('.btn.btn-danger');
-buttonNode.forEach(button=>{
+buttonNode.forEach(button =>{
     button.addEventListener('click', (e) =>{
-        console.log(e.target.data);
+        deleteRecord(e.target.value);
     })
-})
+});
+
+function deleteRecord (uid){
+    const current = list.filter(record => record.uid !== uid);
+    if (current.length === 0){
+        localStorage.clear();
+    }else{
+        localStorage.setItem('collection', JSON.stringify(current));
+    }
+
+    location.reload();
+};
 
 

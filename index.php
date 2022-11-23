@@ -34,6 +34,7 @@ ini_set('display_startup_errors', 1); ?>
                     <form  class="form">
                         <input type="hidden" value="T-shirt001" name="id">
                         <input type="number" value="0" name="quantity" class="form-control mb-2" min="1" value="1" max="5">
+                        <input type="hidden" value="" class="uid" name="uid">
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="size">
                             <option selected>Open this select menu</option>
                             <option value="small">Small</option>
@@ -55,6 +56,7 @@ ini_set('display_startup_errors', 1); ?>
                     <form class="form">
                         <input type="hidden" value="T-shirt002" name="id" >
                         <input type="number" value="0" name="quantity" class="form-control mb-2" min="1" value="1" max="5">
+                        <input type="hidden" value="" class="uid" name="uid">
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="size">
                             <option selected>Open this select menu</option>
                             <option value="small">Small</option>
@@ -76,6 +78,7 @@ ini_set('display_startup_errors', 1); ?>
                     <form class="form">
                         <input type="hidden" value="T-shirt003" name="id">
                         <input type="number" value="0" name="quantity" class="form-control mb-2" min="1" value="1" max="5">
+                        <input type="hidden" value="" class="uid" name="uid">
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="size">
                             <option selected>Open this select menu</option>
                             <option value="small">Small</option>
@@ -91,5 +94,6 @@ ini_set('display_startup_errors', 1); ?>
     </div>
 </div>
 <script src="captureHandler.js"></script>
+<script type="module" src="uidAssign.js"></script>
 </body>
 </html>
